@@ -133,7 +133,7 @@ class PrettyPhoto extends CWidget {
 
         $dir = rtrim($dir,'/').'/';
         $dirMiniatures = $dir.'miniatures/';
-        if ( ! is_dir($dirMiniatures)) mkdir($dirMiniatures);
+        if ( ! is_dir($dirMiniatures)) mkdir($dirMiniatures, 0777, true);
         
         $filesPhoto = glob($dir.'*.{jpg,JPG,png,PNG,gif,GIF}', GLOB_BRACE);
         $filesPhoto = ($filesPhoto !== false) ? array_map('basename',$filesPhoto) : array();
