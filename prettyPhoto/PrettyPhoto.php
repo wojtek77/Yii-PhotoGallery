@@ -88,7 +88,7 @@ class PrettyPhoto extends CWidget {
 	public function init() {
 		if (empty($this->assetsUrl))
 			$this->assetsUrl = Yii::app()->getAssetManager()->publish(
-				dirname(__FILE__). DIRECTORY_SEPARATOR.'prettyPhoto'
+				dirname(__FILE__). DIRECTORY_SEPARATOR.'jqueryPrettyPhoto'
 			);
 
 		$this->registerClientScript();

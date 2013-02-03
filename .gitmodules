@@ -1,0 +1,3 @@
+[submodule "prettyPhoto/jqueryPrettyPhoto"]
+	path = prettyPhoto/jqueryPrettyPhoto
+	url = https://github.com/wojtek77/Yii-PhotoGallery.git
