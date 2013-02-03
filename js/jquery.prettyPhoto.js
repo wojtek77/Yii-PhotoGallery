@@ -151,10 +151,11 @@
 			
 			// Put the SRCs, TITLEs, ALTs into an array.
 			pp_images = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return $(n).attr('href'); }) : $.makeArray($(this).attr('href'));
-			pp_titles = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).find('img').attr('alt')) ? $(n).find('img').attr('alt') : ""; }) : $.makeArray($(this).find('img').attr('alt'));
+			pp_images_miniatures = (isSet) ? jQuery.map(matchedObjects, function(n, i){if($(n).attr(settings.hook).indexOf(theRel) != -1) return $(n).find('img').attr('src');}) : $.makeArray($(caller).find('img').attr('src'));
+            pp_titles = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).find('img').attr('alt')) ? $(n).find('img').attr('alt') : ""; }) : $.makeArray($(this).find('img').attr('alt'));
 			pp_descriptions = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).attr('title')) ? $(n).attr('title') : ""; }) : $.makeArray($(this).attr('title'));
 			
-			if(pp_images.length > settings.overlay_gallery_max) settings.overlay_gallery = false;
+			//if(pp_images.length > settings.overlay_gallery_max) settings.overlay_gallery = false;
 			
 			set_position = jQuery.inArray($(this).attr('href'), pp_images); // Define where in the array the clicked item is positionned
 			rel_index = (isSet) ? set_position : $("a["+settings.hook+"^='"+theRel+"']").index($(this));
@@ -759,13 +760,13 @@
 			if(isSet && settings.overlay_gallery) {
 				currentGalleryPage = 0;
 				toInject = "";
-				for (var i=0; i < pp_images.length; i++) {
-					if(!pp_images[i].match(/\b(jpg|jpeg|png|gif)\b/gi)){
+				for (var i=0; i < pp_images_miniatures.length; i++) {
+					if(!pp_images_miniatures[i].match(/\b(jpg|jpeg|png|gif)\b/gi)){
 						classname = 'default';
 						img_src = '';
 					}else{
 						classname = '';
-						img_src = pp_images[i];
+						img_src = pp_images_miniatures[i];
 					}
 					toInject += "<li class='"+classname+"'><a href='#'><img src='" + img_src + "' width='50' alt='' /></a></li>";
 				};
