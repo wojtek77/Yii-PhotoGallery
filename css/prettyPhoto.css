@@ -5,6 +5,9 @@
 	/* ----------------------------------
 		Default Theme
 	----------------------------------- */
+	
+	div#pretty_photo img {margin: 10px; padding: 5px; border: 10px solid #eee;}
+	
 
 	div.pp_default .pp_top,
 	div.pp_default .pp_top .pp_middle,
