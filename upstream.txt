@@ -1,6 +1,0 @@
-
-
-// for jqueryPrettyPhoto
-
-git remote add upstream https://github.com/scaron/prettyphoto.git
-git fetch upstream
