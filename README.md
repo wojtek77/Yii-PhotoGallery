@@ -5,9 +5,15 @@ and a jQuery based lightbox clone <https://github.com/scaron/prettyphoto>
 
 ## Usage
 
-1. Copy the directory **prettyPhoto** to directory **"/protected/extensions"** in project Yii
+1. Copy the repository with the submodule to your computer:
 
-2. In View:
+		git clone "https://github.com/wojtek77/Yii-PhotoGallery.git"
+		cd Yii-PhotoGallery
+		git submodule update --init
+
+2. Copy the directory **prettyPhoto** to directory **"/protected/extensions"** in project Yii
+
+3. In View:
 	
 		$this->beginWidget('ext.prettyPhoto.PrettyPhoto', array(
 			'id'=>'pretty_photo',   		// not change any of this, is set in css
@@ -25,4 +31,4 @@ and a jQuery based lightbox clone <https://github.com/scaron/prettyphoto>
 		));
 		$this->endWidget();
 
-3. Copy your photos to the directory **"/photos"**
+4. Copy your photos to the directory **"/photos"**
